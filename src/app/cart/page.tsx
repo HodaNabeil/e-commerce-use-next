@@ -4,9 +4,9 @@ import { useSearchParams } from "next/navigation";
 import OrderSummary from "../features/cart/components/OrderSummary";
 import Steps from "../features/cart/components/Steps";
 import ItemsSteps from "../features/cart/components/ItemsSteps";
-import { CartItemsList } from "../types/Cart";
+import { CartItems } from "../types/cart";
 
-const cartItems: CartItemsList = [
+const cartItems: CartItems[] = [
   {
     id: 1,
     name: "Nike Ultraboost Pulse",
@@ -70,7 +70,7 @@ export default function cartPage() {
       <h1 className="text-2xl font-medium">Your Shopping Cart</h1>
       <ItemsSteps activeStep={activeStep} />
       <div className="w-full flex flex-col lg:flex-row gap-16">
-        <Steps cartItems={cartItems} activeStep={activeStep} />
+        <Steps activeStep={activeStep} />
         <OrderSummary Props={{ cartItems, activeStep }} />
       </div>
     </div>

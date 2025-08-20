@@ -5,12 +5,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { ShoppingCart } from "lucide-react";
 import { useState } from "react";
+import useCartStore from "@/app/store/cart";
+import { toast } from "react-toastify";
 
 const ProductCard = ({ product }: { product: Product }) => {
+  const { addToCart } = useCartStore();
   const [productTypes, setProductTypes] = useState({
     size: product.sizes[0],
     color: product.colors[0],
   });
+
+  const handleAddToCart = (product: Product) => {
+    addToCart({
+      ...product,
+      quantity: 1,
+      selectedSize: productTypes.size,
+      selectedColor: productTypes.color,
+    });
+    toast.success("Product added to cart");
+  };
 
   // Function to handle size change
   const handleProductTypeChange = ({
@@ -96,7 +109,10 @@ const ProductCard = ({ product }: { product: Product }) => {
         </div>
         <div className="flex justify-between  items-center gap-2 ">
           <p className="font-medium text-sm">${product.price.toFixed(2)}</p>
-          <button className="ring ring-gray-300 flex items-center  cursor-pointer px-4 py-2 rounded-md hover:bg-gray-100 transition-colors">
+          <button
+            onClick={() => handleAddToCart(product)}
+            className="ring ring-gray-300 flex items-center  cursor-pointer px-4 py-2 rounded-md hover:bg-gray-100 transition-colors"
+          >
             <ShoppingCart className="inline mr-2 w-4 h-4" />
             <p className=" hidden md:block text-sm"> Add to Cart</p>
           </button>

@@ -7,3 +7,13 @@ export type CartItems = Product & {
 };
 
 export type CartItemsList = CartItems[];
+
+export type CartState = {
+  cart: CartItems[];
+};
+
+export type CartActions = CartState & {
+  addToCart: (item: CartItems) => void;
+  removeFromCart: (id: CartItems) => void;
+  clearCart: () => void;
+};

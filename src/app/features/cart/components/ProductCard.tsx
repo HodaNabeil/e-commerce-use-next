@@ -1,4 +1,4 @@
-import { CartItems } from "@/app/types/product";
+import { CartItems } from "@/app/types/cart";
 import { Trash2 } from "lucide-react";
 import Image from "next/image";
 

@@ -833,13 +833,23 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$features$2f$ca
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$features$2f$cart$2f$components$2f$ProductCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/features/cart/components/ProductCard.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$features$2f$cart$2f$components$2f$ShoppingForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/features/cart/components/ShoppingForm.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$store$2f$cart$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/store/cart.ts [app-ssr] (ecmascript)");
 ;
 ;
 ;
 ;
 ;
-function Steps({ cartItems, activeStep }) {
-    const [shippingForm, setShippingForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+;
+function Steps({ activeStep }) {
+    const [shippingForm, setShippingForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+        city: ""
+    });
+    const { cart } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$store$2f$cart$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])();
+    const cartItems = cart;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "w-full lg:w-7/12 shadow-lg border-1 border-amber-100 p-8 rounded-lg flexflex-col gap-8",
         children: activeStep === 1 ? cartItems.map((item)=>{
@@ -847,30 +857,30 @@ function Steps({ cartItems, activeStep }) {
                 item: item
             }, item.id, false, {
                 fileName: "[project]/src/app/features/cart/components/Steps.tsx",
-                lineNumber: 19,
+                lineNumber: 23,
                 columnNumber: 18
             }, this);
         }) : activeStep === 2 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$features$2f$cart$2f$components$2f$ShoppingForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-            setShippingForm: ()=>setShippingForm(true)
+            setShippingForm: setShippingForm
         }, void 0, false, {
             fileName: "[project]/src/app/features/cart/components/Steps.tsx",
-            lineNumber: 22,
+            lineNumber: 26,
             columnNumber: 9
         }, this) : activeStep === 3 && shippingForm ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$features$2f$cart$2f$components$2f$PaymentForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
             fileName: "[project]/src/app/features/cart/components/Steps.tsx",
-            lineNumber: 24,
+            lineNumber: 28,
             columnNumber: 9
         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
             className: "text-sm text-gray-400",
             children: "Please fill the shipping form first"
         }, void 0, false, {
             fileName: "[project]/src/app/features/cart/components/Steps.tsx",
-            lineNumber: 26,
+            lineNumber: 30,
             columnNumber: 9
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/features/cart/components/Steps.tsx",
-        lineNumber: 16,
+        lineNumber: 20,
         columnNumber: 5
     }, this);
 }
@@ -1055,7 +1065,6 @@ function cartPage() {
                 className: "w-full flex flex-col lg:flex-row gap-16",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$features$2f$cart$2f$components$2f$Steps$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        cartItems: cartItems,
                         activeStep: activeStep
                     }, void 0, false, {
                         fileName: "[project]/src/app/cart/page.tsx",
