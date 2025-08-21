@@ -44,21 +44,45 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zustand$2f$e
 ;
 const useCartStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["create"])()((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["persist"])((set)=>({
         cart: [],
-        addToCart: (product)=>set((state)=>({
+        hasHydrated: false,
+        addToCart: (product)=>set((state)=>{
+                const existingIndex = state.cart.findIndex((item)=>item.id === product.id && item.selectedSize === product.selectedSize && item.selectedColor === product.selectedColor);
+                if (existingIndex !== -1) {
+                    const updatedCart = [
+                        ...state.cart
+                    ];
+                    updatedCart[existingIndex].quantity += product.quantity || 1;
+                    return {
+                        cart: updatedCart
+                    };
+                }
+                return {
                     cart: [
                         ...state.cart,
-                        product
+                        {
+                            ...product,
+                            quantity: 1,
+                            // هيتم الحصول عليهم من المنتج
+                            selectedColor: product.selectedColor,
+                            selectedSize: product.selectedSize
+                        }
                     ]
-                })),
+                };
+            }),
         removeFromCart: (product)=>set((state)=>({
-                    cart: state.cart.filter((item)=>item.id !== product.id)
+                    cart: state.cart.filter((item)=>!(item.id === product.id && item.selectedColor === product.selectedColor && item.selectedSize === product.selectedSize))
                 })),
         clearCart: ()=>set({
                 cart: []
             })
     }), {
     name: "cart-storage",
-    storage: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createJSONStorage"])(()=>localStorage)
+    storage: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createJSONStorage"])(()=>localStorage),
+    onRehydrateStorage: ()=>(state)=>{
+            if (state) {
+                state.hasHydrated = true;
+            }
+        }
 }));
 const __TURBOPACK__default__export__ = useCartStore;
 }),
@@ -78,7 +102,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 function ShoppingCartIcon() {
-    const { cart } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$store$2f$cart$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])();
+    const { cart, hasHydrated } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$store$2f$cart$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])();
+    if (!hasHydrated) return null;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
         href: "/cart",
         className: "relative",
@@ -87,21 +112,21 @@ function ShoppingCartIcon() {
                 className: "text-gray-600 w-4 h-4"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/shared/ShoppingCartIcon.tsx",
-                lineNumber: 12,
+                lineNumber: 14,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                 className: "   absolute -top-3 -right-3 w-5 h-5        text-xs text-gray-600 flex justify-center item-center bg-amber-400 !rounded-[50%] ",
-                children: cart.length
+                children: cart.reduce((acc, item)=>acc + item.quantity, 0)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/shared/ShoppingCartIcon.tsx",
-                lineNumber: 13,
+                lineNumber: 15,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/shared/ShoppingCartIcon.tsx",
-        lineNumber: 11,
+        lineNumber: 13,
         columnNumber: 5
     }, this);
 }

@@ -6,7 +6,9 @@ import Link from "next/link";
 import React from "react";
 
 export default function ShoppingCartIcon() {
-  const { cart } = useCartStore();
+  const { cart, hasHydrated } = useCartStore();
+
+  if (!hasHydrated) return null;
   return (
     <Link href="/cart" className="relative">
       <ShoppingCart className="text-gray-600 w-4 h-4" />
@@ -16,7 +18,7 @@ export default function ShoppingCartIcon() {
       
       text-xs text-gray-600 flex justify-center item-center bg-amber-400 !rounded-[50%] "
       >
-        {cart.length}
+        {cart.reduce((acc, item) => acc + item.quantity, 0)}
       </span>
     </Link>
   );

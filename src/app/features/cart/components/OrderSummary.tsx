@@ -1,11 +1,11 @@
 "use client";
 
-import { CartItemsList } from "@/app/types/product";
+import { CartItems } from "@/app/types/cart";
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
 type Props = {
-  cartItems: CartItemsList;
+  cartItems: CartItems[];
   activeStep: number;
 };
 export default function OrderSummary({ Props }: { Props: Props }) {

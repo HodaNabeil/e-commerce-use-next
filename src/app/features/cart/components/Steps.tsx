@@ -20,7 +20,12 @@ export default function Steps({ activeStep }: { activeStep: number }) {
     <div className="w-full lg:w-7/12 shadow-lg border-1 border-amber-100 p-8 rounded-lg flexflex-col gap-8">
       {activeStep === 1 ? (
         cartItems.map((item: CartItems) => {
-          return <ProductCard key={item.id} item={item} />;
+          return (
+            <ProductCard
+              key={item.id + item.selectedSize + item.selectedColor}
+              item={item}
+            />
+          );
         })
       ) : activeStep === 2 ? (
         <ShoppingForm setShippingForm={setShippingForm} />

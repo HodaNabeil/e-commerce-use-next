@@ -1,8 +1,10 @@
+import useCartStore from "@/app/store/cart";
 import { CartItems } from "@/app/types/cart";
 import { Trash2 } from "lucide-react";
 import Image from "next/image";
 
 export default function ProductCard({ item }: { item: CartItems }) {
+  const { removeFromCart } = useCartStore();
   return (
     <div className="flex items-center justify-between">
       {/* IMge and Content */}
@@ -28,8 +30,9 @@ export default function ProductCard({ item }: { item: CartItems }) {
       </div>
       {/* Delete Button */}
       <button
-        className=" gap-2 w-8 h-8  bg-gray-100 hover:bg-gray-200 transition-all duration-300 
-                     p-2 py-1 rounded-full cursor-pointer text-red-400 "
+        onClick={() => removeFromCart(item)}
+        className="gap-2 w-8 h-8 bg-gray-100 hover:bg-gray-200 transition-all duration-300 
+                   p-2 py-1 rounded-full cursor-pointer text-red-400"
       >
         <Trash2 className="w-4 h-4 flex items-center" />
       </button>
