@@ -61,7 +61,7 @@ const useCartStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
                         ...state.cart,
                         {
                             ...product,
-                            quantity: 1,
+                            quantity: product.quantity || 1,
                             // هيتم الحصول عليهم من المنتج
                             selectedColor: product.selectedColor,
                             selectedSize: product.selectedSize

@@ -28,7 +28,7 @@ const useCartStore = create<CartState & CartActions>()(
               ...state.cart,
               {
                 ...product,
-                quantity: 1,
+                quantity: product.quantity || 1,
                 // هيتم الحصول عليهم من المنتج
                 selectedColor: product.selectedColor,
                 selectedSize: product.selectedSize,
