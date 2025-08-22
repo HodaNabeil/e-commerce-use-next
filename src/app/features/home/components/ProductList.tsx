@@ -7,76 +7,113 @@ import Filter from "./Filter";
 const products: Products = [
   {
     id: 1,
-    name: "Nike Ultraboost Pulse",
-    shortDescription: "راحة وأناقة بأحدث تكنولوجيا الجري.",
+    name: "Adidas CoreFit T-Shirt",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
-      "حذاء Nike Ultraboost Pulse مصمم بأحدث تقنيات الراحة والدعم. خامات عالية الجودة مع تهوية مثالية لجعل خطواتك أكثر خفة.",
-    price: 69.9,
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 39.9,
     sizes: ["s", "m", "l", "xl", "xxl"],
-    colors: ["gray", "pink"],
+    colors: ["gray", "purple", "green"],
     images: {
-      gray: "/products/7g.png",
-      pink: "/products/7p.png",
+      gray: "/products/1g.png",
+      purple: "/products/1p.png",
+      green: "/products/1gr.png",
     },
   },
   {
     id: 2,
-    name: "Levi's Classic Denim",
-    shortDescription: "بنطلون جينز كلاسيكي يناسب كل الأوقات.",
+    name: "Puma Ultra Warm Zip",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
-      "جينز Levi's Classic Denim مصنوع من خامة متينة وجودة عالية، مناسب للخروج الكاجوال أو العمل مع تصميم أنيق ومريح.",
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     price: 59.9,
-    sizes: ["s", "m", "l"],
-    colors: ["blue", "green"],
-    images: {
-      blue: "/products/2g.png",
-      green: "/products/2gr.png",
-    },
+    sizes: ["s", "m", "l", "xl"],
+    colors: ["gray", "green"],
+    images: { gray: "/products/2g.png", green: "/products/2gr.png" },
   },
   {
     id: 3,
-    name: "Adidas Running Tee",
-    shortDescription: "تيشيرت رياضي خفيف ومريح.",
+    name: "Nike Air Essentials Pullover",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
-      "تيشيرت Adidas مصنوع من قماش مرن وخفيف، يساعدك على الجري أو التمرين براحة تامة مع تهوية ممتازة.",
-    price: 29.9,
-    sizes: ["s", "m", "l", "xl"],
-    colors: ["black", "white"],
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 69.9,
+    sizes: ["s", "m", "l"],
+    colors: ["green", "blue", "black"],
     images: {
-      black: "/products/3b.png",
-      white: "/products/3bl.png",
+      green: "/products/3gr.png",
+      blue: "/products/3b.png",
+      black: "/products/3bl.png",
     },
   },
   {
     id: 4,
-    name: "Puma Sport Jacket",
-    shortDescription: "جاكيت رياضي أنيق للشتاء.",
+    name: "Nike Dri Flex T-Shirt",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
-      "جاكيت Puma Sport Jacket مقاوم للبرد والرياح، تصميم عصري وخفيف الوزن مع بطانة داخلية للحفاظ على دفئك.",
-    price: 89.9,
-    sizes: ["m", "l", "xl"],
-    colors: ["navy", "red"],
-    images: {
-      navy: "/products/4p.png",
-      red: "/products/4w.png",
-    },
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 29.9,
+    sizes: ["s", "m", "l"],
+    colors: ["white", "pink"],
+    images: { white: "/products/4w.png", pink: "/products/4p.png" },
   },
   {
     id: 5,
-    name: "Converse All Star",
-    shortDescription: "حذاء كاجوال أيقوني من Converse.",
+    name: "Under Armour StormFleece",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
-      "Converse All Star الحذاء الكلاسيكي الأشهر، مناسب لكل الأوقات والكاجوال ستايل. متوفر بألوان متعددة.",
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     price: 49.9,
-    sizes: ["39", "40", "41", "42"],
-    colors: ["white", "black"],
+    sizes: ["s", "m", "l"],
+    colors: ["red", "orange", "black"],
     images: {
-      white: "/products/5bl.png",
-      black: "/products/5o.png",
+      red: "/products/5r.png",
+      orange: "/products/5o.png",
+      black: "/products/5bl.png",
     },
   },
+  {
+    id: 6,
+    name: "Nike Air Max 270",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 59.9,
+    sizes: ["40", "42", "43", "44"],
+    colors: ["gray", "white"],
+    images: { gray: "/products/6g.png", white: "/products/6w.png" },
+  },
+  {
+    id: 7,
+    name: "Nike Ultraboost Pulse ",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 69.9,
+    sizes: ["40", "42", "43"],
+    colors: ["gray", "pink"],
+    images: { gray: "/products/7g.png", pink: "/products/7p.png" },
+  },
+  {
+    id: 8,
+    name: "Levi’s Classic Denim",
+    shortDescription:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    description:
+      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    price: 59.9,
+    sizes: ["s", "m", "l"],
+    colors: ["blue", "green"],
+    images: { blue: "/products/8b.png", green: "/products/8gr.png" },
+  },
 ];
-
 export default function ProductList({
   category,
   params,

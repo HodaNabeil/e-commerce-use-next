@@ -5,16 +5,17 @@ import Image from "next/image";
 const product: Product = {
   id: 1,
   name: "Adidas CoreFit T-Shirt",
-  shortDescription: "راحة وأناقة بأحدث تكنولوجيا الجري.",
+  shortDescription:
+    "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
   price: 59.9,
-  sizes: ["XS", "S", "M", "L", "XL"],
+  sizes: ["xs", "s", "m", "l", "xl"],
   colors: ["gray", "purple", "green"],
   images: {
-    gray: "/products/7g.png",
-    purple: "/products/7p.png",
-    green: "/products/7g.png", // Using same image for demo
+    gray: "/products/1g.png",
+    purple: "/products/1p.png",
+    green: "/products/1gr.png",
   },
 };
 
@@ -23,8 +24,8 @@ export const generateMatadate = async ({
 }: {
   params: { id: string };
 }) => {
-  // TODO:get the Product from db
-  // TEMPORARy
+  // TODO:get the product from db
+  // TEMPORARY
   return {
     title: product.name,
     description: product.description,
@@ -41,31 +42,26 @@ const ProductDetails = async ({
   const selectedSize = size || product.sizes[0];
   const selectedColor = color || product.colors[0];
 
-  const handleBuyNow = () => {
-    // handleAddToCart();
-    // Redirect to checkout or cart page
-  };
+  const handleBuyNow = () => {};
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-12">
+    <div className="flex flex-col gap-4 lg:flex-row md:gap-12 mt-12">
       {/* Left Side - Product Image */}
-      <div className="relative h-96">
+      <div className="w-full lg:w-5/12 relative aspect-[2/3]">
         <Image
-          src="/products/7g.png"
-          alt="Product"
+          src={product.images[selectedColor]}
+          alt={product.name}
           fill
-          className="  object-contain"
+          className="object-contain rounded-md"
         />
       </div>
 
       {/* Right Side - Product Details */}
-      <div className="w-full">
+      <div className="w-full lg:w-7/12 flex flex-col gap-4">
         <h1 className="text-3xl font-bold text-gray-900  ">{product.name}</h1>
-
         <p className="text-gray-600 text-sm leading-relaxed m-2">
           {product.description}
         </p>
-
         <div className="text-3xl font-bold text-gray-900  m-2">
           ${product.price.toFixed(2)}
         </div>
@@ -75,35 +71,28 @@ const ProductDetails = async ({
           selectedSize={selectedSize}
           selectedColor={selectedColor}
         />
-
-        <div className="flex items-center gap-4">
-          <div>
-            <Image
-              src="/klarna.png"
-              alt="Klarna"
-              className="h-8 w-8  object-contain"
-              width={32}
-              height={32}
-            />
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-8 h-5 bg-orange-500 rounded-l-full"></div>
-            <div className="w-8 h-5 bg-red-500 rounded-r-full"></div>
-            <span className="ml-2 text-sm font-medium">Mastercard</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-8 h-5 bg-blue-600 rounded"></div>
-            <span className="ml-2 text-sm font-medium">VISA</span>
-          </div>
-          <div>
-            <Image
-              src="/stripe.png"
-              alt="Stripe"
-              className="h-8 w-8  object-contain"
-              width={32}
-              height={32}
-            />
-          </div>
+        <div className="flex items-center gap-2 mt-4">
+          <Image
+            src="/klarna.png"
+            alt="klarna"
+            width={50}
+            height={25}
+            className="rounded-md"
+          />
+          <Image
+            src="/cards.png"
+            alt="cards"
+            width={50}
+            height={25}
+            className="rounded-md"
+          />
+          <Image
+            src="/stripe.png"
+            alt="stripe"
+            width={50}
+            height={25}
+            className="rounded-md"
+          />
         </div>
 
         <div className="text-xs text-gray-500 leading-relaxed my-2">
