@@ -1,6 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import OrderSummary from "../features/cart/components/OrderSummary";
 import Steps from "../features/cart/components/Steps";
 import ItemsSteps from "../features/cart/components/ItemsSteps";
@@ -59,10 +60,8 @@ const cartItems: CartItems[] = [
     selectedColor: "black",
   },
 ];
-export default function cartPage() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+function CartContent() {
   const searchPaaram = useSearchParams();
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const activeStep = parseInt(searchPaaram.get("step") || "1");
 
   return (
@@ -74,5 +73,13 @@ export default function cartPage() {
         <OrderSummary Props={{ cartItems, activeStep }} />
       </div>
     </div>
+  );
+}
+
+export default function cartPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CartContent />
+    </Suspense>
   );
 }

@@ -1,8 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///D:/MY-Projects/coures-next/e-commerce-ui/src/app/features/home/components/Categories.tsx"],"sourcesContent":["import React from 'react'\r\n\r\nexport default function Categories() {\r\n  return (\r\n    <div>Categories</div>\r\n  )\r\n}\r\n"],"names":[],"mappings":";;;;;AAEe,SAAS;IACtB,qBACE,8OAAC;kBAAI;;;;;;AAET","debugId":null}},
-    {"offset": {"line": 44, "column": 0}, "map": {"version":3,"sources":["file:///D:/MY-Projects/coures-next/e-commerce-ui/src/app/page.tsx"],"sourcesContent":["import Image from \"next/image\";\r\nimport ProductList from \"./features/home/components/ProductList\";\r\n\r\nconst Homepage = () => {\r\n  return (\r\n    <div className=\"\">\r\n      <div className=\"relative  aspect-[3/1] mb-12\">\r\n        <Image src=\"/featured.png\" fill alt=\"Featured prouduct\"></Image>\r\n      </div>\r\n      <ProductList />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Homepage;\r\n"],"names":[],"mappings":";;;;AAAA;AACA;;;;AAEA,MAAM,WAAW;IACf,qBACE,8OAAC;QAAI,WAAU;;0BACb,8OAAC;gBAAI,WAAU;0BACb,cAAA,8OAAC,6HAAA,CAAA,UAAK;oBAAC,KAAI;oBAAgB,IAAI;oBAAC,KAAI;;;;;;;;;;;0BAEtC,8OAAC,4JAAA,CAAA,UAAW;;;;;;;;;;;AAGlB;uCAEe","debugId":null}}]
-}
