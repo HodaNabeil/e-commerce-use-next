@@ -61,12 +61,10 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --color-red-400: #ff6568;
     --color-red-500: #fb2c36;
-    --color-orange-500: #fe6e00;
     --color-amber-50: #fffbeb;
     --color-amber-100: #fef3c6;
     --color-amber-400: #fcbb00;
     --color-amber-500: #f99c00;
-    --color-blue-600: #155dfc;
     --color-gray-100: #f3f4f6;
     --color-gray-200: #e5e7eb;
     --color-gray-300: #d1d5dc;
@@ -109,12 +107,10 @@
     :root, :host {
       --color-red-400: color(display-p3 .933534 .431676 .423491);
       --color-red-500: color(display-p3 .903738 .262579 .253307);
-      --color-orange-500: color(display-p3 .946589 .449788 .0757345);
       --color-amber-50: color(display-p3 .997804 .985047 .926312);
       --color-amber-100: color(display-p3 .989391 .954583 .796328);
       --color-amber-400: color(display-p3 .959186 .738519 .118268);
       --color-amber-500: color(display-p3 .93994 .620584 .0585367);
-      --color-blue-600: color(display-p3 .174493 .358974 .950247);
       --color-gray-100: color(display-p3 .953567 .956796 .964321);
       --color-gray-200: color(display-p3 .899787 .906171 .92106);
       --color-gray-300: color(display-p3 .822033 .835264 .858521);
@@ -131,12 +127,10 @@
     :root, :host {
       --color-red-400: lab(63.7053% 60.7449 31.3109);
       --color-red-500: lab(55.4814% 75.0732 48.8528);
-      --color-orange-500: lab(64.272% 57.1788 90.3583);
       --color-amber-50: lab(98.6252% -.635982 8.42309);
       --color-amber-100: lab(95.916% -1.2165 23.111);
       --color-amber-400: lab(80.1641% 16.6016 99.2089);
       --color-amber-500: lab(72.7183% 31.8672 97.9407);
-      --color-blue-600: lab(44.0605% 29.0279 -86.0352);
       --color-gray-100: lab(96.1596% -.082314 -1.13575);
       --color-gray-200: lab(91.6229% -.159085 -2.26791);
       --color-gray-300: lab(85.1236% -.612259 -3.7138);
@@ -631,10 +625,6 @@
     height: calc(var(--spacing) * 32);
   }
 
-  .h-96 {
-    height: calc(var(--spacing) * 96);
-  }
-
   .h-\[14px\] {
     height: 14px;
   }
@@ -772,10 +762,6 @@
     border-radius: var(--radius-md) !important;
   }
 
-  .rounded {
-    border-radius: .25rem;
-  }
-
   .rounded-full {
     border-radius: 3.40282e38px;
   }
@@ -790,16 +776,6 @@
 
   .rounded-sm {
     border-radius: var(--radius-sm);
-  }
-
-  .rounded-l-full {
-    border-top-left-radius: 3.40282e38px;
-    border-bottom-left-radius: 3.40282e38px;
-  }
-
-  .rounded-r-full {
-    border-top-right-radius: 3.40282e38px;
-    border-bottom-right-radius: 3.40282e38px;
   }
 
   .border, .border-1 {
@@ -858,10 +834,6 @@
     background-color: var(--color-amber-500);
   }
 
-  .bg-blue-600 {
-    background-color: var(--color-blue-600);
-  }
-
   .bg-gray-100 {
     background-color: var(--color-gray-100);
   }
@@ -880,14 +852,6 @@
 
   .bg-gray-900 {
     background-color: var(--color-gray-900);
-  }
-
-  .bg-orange-500 {
-    background-color: var(--color-orange-500);
-  }
-
-  .bg-red-500 {
-    background-color: var(--color-red-500);
   }
 
   .bg-white {
@@ -1330,12 +1294,6 @@
   @media (min-width: 64rem) {
     .lg\:max-w-3xl {
       max-width: var(--container-3xl);
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:grid-cols-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
